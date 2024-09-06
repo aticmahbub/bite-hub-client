@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import MenuItem from '../Home/shared/MenuItem/MenuItem';
+import MenuItem from '../MenuItem/MenuItem';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 
 
