@@ -5,28 +5,23 @@ import useMenu from '../../../hooks/useMenu';
 
 
 const PopularMenu = () => {
-    const menu = useMenu()
-    const popularItems = menu.filter(item => item.category ==='popular')
+    const [menu] = useMenu()
+    // const [popular, setPopular] = useState([]) 
 
-    // const [products, setProducts] = useState()
+    const popularItems = menu?.filter(item => item.category=== 'popular')
+    // setPopular(popularItems)
+    // console.log(popular);
 
-    // useEffect(() => {
-    //     fetch('/menu.json')
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setProducts(popularItems)
-    //         })
-    // }, [])
     return (
         <section className='mb-12'>
             <SectionTitle subheading="From our menu" heading="Popular  Items" />
         <div className='grid md:grid-cols-2 gap-10'>
-            {
-                popularItems?.map((product, idx) => <MenuItem
-                key={idx}
-                product={product}
-                />)
-            }
+        {
+            popularItems?.map(item => <MenuItem
+            key={item._id}
+            item={item}
+            />)
+        }
         </div>
         </section>
     );
